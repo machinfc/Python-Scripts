@@ -1,0 +1,1 @@
+The "surface_classifier.keras" is a craterslab file located in the site-packages directory, achieving a test accuracy of 1.0 for the "train_classifier" file within this folder.
