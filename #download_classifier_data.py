@@ -1,4 +1,5 @@
 # This script downloads the classifier data from the craterslab GitHub repository.
+
 import shutil
 import requests
 import zipfile
