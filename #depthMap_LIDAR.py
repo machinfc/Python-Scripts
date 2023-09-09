@@ -1,4 +1,4 @@
-# Fetching depth maps of laboratory experiments from Lidar sensors for craterslab observables analysis.
+# # Fetching depth maps of laboratory experiments from Lidar sensors for craterslab observables analysis.
 
 from craterslab.sensors import DepthMap, SensorResolution
 from craterslab.visuals import plot_3D

@@ -1,15 +1,12 @@
 # This script is similar to the file Visualization.py, but it only loads a single depth map from a file and plots it.
 # It is important to note that water model visualization doesn't work for Sand Mounds.
 import os
-import numexpr as ne
 
 from craterslab.sensors import DepthMap
 from craterslab.craters import Surface
 from craterslab.ellipse import EllipseVisualConfig
 from craterslab.ellipse import EllipticalModel
 from craterslab.visuals import plot_2D, plot_3D, plot_profile
-
-os.environ["NUMEXPR_MAX_THREADS"] = str(ne.detect_number_of_cores())
 
 # Load the depth map from the specified file
 file_path = 'data/data_CAGEO/Figs/crater_Fig4.npz'

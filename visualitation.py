@@ -1,8 +1,6 @@
 # Load depth maps from files, compute an elliptical model and plot
 # the depth map together with the water model and its max profile. This script was used for export .eps graphs
 # It is important to note that water model visualization doesn't work for Sand Mounds. 
-import os
-import numexpr as ne
 
 from craterslab.sensors import DepthMap
 from craterslab.craters import Surface
@@ -10,10 +8,9 @@ from craterslab.ellipse import EllipseVisualConfig
 from craterslab.ellipse import EllipticalModel
 from craterslab.visuals import plot_2D, plot_3D, plot_profile
 
-os.environ["NUMEXPR_MAX_THREADS"] = str(ne.detect_number_of_cores())
 
 for i in range(1, 52):
-    depth_map = DepthMap.load(f'data/data_Fluidized_sand/fluized_{i}.npz')
+    depth_map = DepthMap.load(f'data/data_Fluized_sand/fluized_{i}.npz')
     depth_map.auto_crop()
 
     em = EllipticalModel(depth_map, 20)
