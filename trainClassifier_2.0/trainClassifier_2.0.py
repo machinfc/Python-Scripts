@@ -17,7 +17,7 @@ from craterslab.classification import (
 from craterslab.sensors import DepthMap
 
 
-DATA_PATH = Path("data/data_train_classifier_2")
+DATA_PATH = Path("data/data_trainClassifier_2.0")
 
 NUM_EPOCHS = 4
 BATCH_SIZE = 2

@@ -29,6 +29,16 @@ This repository contains scripts for fetching depth maps of laboratory experimen
 
 - **`lrocFixer.py`**: Load a point cloud from an .xyz file containing data from lroc. Then, analyze the crater using craterslab functionalities. It can perform visualizations, profiles, fix bad ellipse fitting, correct wrongly Surface Type classification, print its observables, and export the crater's profile.
 
+### trainClassifier_2.0 Folder Overview
+
+- **`dataConverts.py`**: This script converts and exports data files from matlab (.mat) to Python (.npz) format.
+
+- **`download_classifierData_1.0.py`**: This script downloads the classifier data from the craterslab GitHub repository.
+
+- **`trainClassifier_2.0.py`**: This script works with the "data_trainClassifier_2.0" folder for Fluized and Compacted experiments. 
+
+- **`surface_classifier.keras`**: It is a craterslab file located in the "/site-packages/craterslab" directory, achieving a test accuracy of 1.0 for the "trainClassifier_2.0.py". 
+
 # Craterslab To-Do List
 
 ## Pending Tasks to Incorporate
