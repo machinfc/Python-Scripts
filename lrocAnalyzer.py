@@ -42,7 +42,7 @@ for index in range(1, 2):
     print(f'Analyzing file {index}')
     filename = f"lroc_{index}.xyz"
     data_resolution = SensorResolution(235.65, 235.65, 1.0, "m")
-    depth_map = DepthMap.from_xyz_file(filename, data_folder="data/data_LROC", resolution=data_resolution
+    depth_map = DepthMap.from_xyz_file(filename, data_folder="data/data_QuickMap", resolution=data_resolution
                                        )
 
     depth_map.auto_crop()
@@ -53,7 +53,7 @@ for index in range(1, 2):
     em = EllipticalModel(depth_map, 20)
     p = em.max_profile()
 
-    print(f'Processing file {index}')
+    print(f'Processing file {index} with type: {s.type}')
 
     # Visualize data in 2D and 3D
     plot_2D(depth_map, profile=p, ellipse=em)

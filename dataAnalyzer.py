@@ -37,7 +37,7 @@ data = []
 for index in range(1, 52):
     print(f'Analyzing file {index}')
     filename = f"fluized_{index}.npz"
-    depth_map = DepthMap.load(f'data/data_Fluized_sand/{filename}')
+    depth_map = DepthMap.load(f'data/data_Fluized/{filename}')
     depth_map.auto_crop()
     s = Surface(depth_map)
     surface_data = [filename, s.type]
@@ -46,7 +46,7 @@ for index in range(1, 52):
     em = EllipticalModel(depth_map, 20)
     p = em.max_profile()
     
-    print(f'Processing file {index}')
+    print(f'Processing file {index} with type: {s.type}')
     
     # Visualize data in 2D and 3D
     plot_2D(depth_map, profile=p, ellipse=em)
