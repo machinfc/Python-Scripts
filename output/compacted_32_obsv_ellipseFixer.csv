@@ -1,0 +1,2 @@
+filename,type,D,d_max,V_in,V_ex,V_exc,epsilon,V_cp,H_cp
+compacted_32.npz,Complex crater,221.925049,-4.224,152234.1089,25579.65012,152680.3735,0.375857278,46611.79921,14.056

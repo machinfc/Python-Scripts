@@ -10,7 +10,7 @@ from craterslab.visuals import plot_2D, plot_3D, plot_profile
 
 
 for i in range(1, 52):
-    depth_map = DepthMap.load(f'data/data_Fluized_sand/fluized_{i}.npz')
+    depth_map = DepthMap.load(f'data/data_Fluized/fluized_{i}.npz')
     depth_map.auto_crop()
 
     em = EllipticalModel(depth_map, 20)

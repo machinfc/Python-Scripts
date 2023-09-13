@@ -21,8 +21,8 @@ os.makedirs(output_folder, exist_ok=True)  # Create the output folder if it does
 
 def compute_slopes_and_profiles(index):
     # Load the depth map
-    filename = f"fluized_{index}.npz"
-    depth_map = DepthMap.load(f'data/data_Fluized_sand/{filename}')
+    filename = f"compacted_{index}.npz"
+    depth_map = DepthMap.load(f'data/data_Compacted/{filename}')
     depth_map.auto_crop()
     
     # Compute slopes and other visualizations
@@ -41,7 +41,7 @@ def compute_slopes_and_profiles(index):
 
 def write_slopes_to_csv(data):
     # Define the path for the slopes CSV file
-    SLOPES_OUTPUT_FILE = os.path.join(output_folder, "slopes.csv")
+    SLOPES_OUTPUT_FILE = os.path.join(output_folder, "compacted_slopes.csv")
 
     with open(SLOPES_OUTPUT_FILE, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
@@ -65,7 +65,7 @@ def write_slopes_to_csv(data):
 data = []
 
 
-for i in range(1, 52):
+for i in range(25, 50):
     filename, m1, m2 = compute_slopes_and_profiles(i)
     data.append([filename, m1, m2])
 

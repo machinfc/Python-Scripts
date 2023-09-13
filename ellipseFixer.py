@@ -11,8 +11,8 @@ from craterslab.sensors import DepthMap
 from craterslab.visuals import plot_2D, plot_3D
 from craterslab.classification import SurfaceType
 
-filename = "fluized_30.npz"
-ellipse_points = 20
+filename = "compacted_48.npz"
+
 correct_type = SurfaceType.COMPLEX_CRATER
 # correct_type = SurfaceType.SIMPLE_CRATER
 # correct_type = SurfaceType.SAND_MOUND
@@ -26,23 +26,24 @@ ALL_OBSERVABLES = ["D", "d_max", "V_in", "V_ex",
                    "V_exc", "epsilon", "V_cp", "H_cp"]
 
 # Define the output file name for observables
-output_name = filename.replace('.npz', '_em_corrected.csv')
+output_name = filename.replace('.npz', '_obsv_ellipseFixer.csv')
 OBSERVABLES_OUTPUT_FILE = os.path.join(output_folder, output_name)
 
 data = []
 
 print(f'Analyzing file {filename}')
-depth_map = DepthMap.load(f'data/data_Fluized_sand/{filename}')
+depth_map = DepthMap.load(f'data/data_Compacted/{filename}')
 
 # # crop map functions
 
-depth_map.auto_crop()
+# depth_map.auto_crop()
 
-# depth_map.crop_borders(0.7)
+# depth_map.crop_borders(0.6)
 
-# bounding_box = (50, 30, 120, 90)
-# depth_map.crop(bounding_box)
+bounding_box = (10, 50, 100, 100)
+depth_map.crop(bounding_box)
 
+ellipse_points = 20
 s = Surface(depth_map, ellipse_points=ellipse_points)
 s.set_type(correct_type)
 plot_2D(depth_map, ellipse=s.em, block=True)

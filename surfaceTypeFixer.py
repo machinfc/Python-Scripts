@@ -10,16 +10,9 @@ from craterslab.classification import SurfaceType
 
 # Define the files with corrected surface types
 wrongly_classified = [
-    ("fluized_9.npz", SurfaceType.COMPLEX_CRATER),
-    ("fluized_12.npz", SurfaceType.COMPLEX_CRATER),
-    ("fluized_26.npz", SurfaceType.SIMPLE_CRATER),
-    ("fluized_27.npz", SurfaceType.SIMPLE_CRATER),
-    ("fluized_29.npz", SurfaceType.SIMPLE_CRATER),
-    ("fluized_31.npz", SurfaceType.SIMPLE_CRATER),
-    ("fluized_35.npz", SurfaceType.SIMPLE_CRATER),
-    ("fluized_39.npz", SurfaceType.COMPLEX_CRATER),
-    ("fluized_44.npz", SurfaceType.COMPLEX_CRATER),
-    ("fluized_45.npz", SurfaceType.COMPLEX_CRATER),
+    ("compacted_41.npz", SurfaceType.COMPLEX_CRATER),
+    ("compacted_43.npz", SurfaceType.COMPLEX_CRATER),
+    ("compacted_47.npz", SurfaceType.COMPLEX_CRATER),
 ]
 
 output_folder = 'output'
@@ -33,12 +26,12 @@ DEFAULT_OBS_VAL = -1
 
 # Define the output file path for observables
 OBSERVABLES_OUTPUT_FILE = os.path.join(
-    output_folder, f'observables_S.Type_fluized.csv')  # Full path to the file
+    output_folder, f'compacted_obsv_S.Type.csv')  # Full path to the file
 
 data = []
 for filename, s_type in wrongly_classified:
     print(f'Analyzing file {filename}')
-    depth_map = DepthMap.load(f'data/data_Fluized_sand/{filename}')
+    depth_map = DepthMap.load(f'data/data_Compacted/{filename}')
     depth_map.auto_crop()
     s = Surface(depth_map)
 
