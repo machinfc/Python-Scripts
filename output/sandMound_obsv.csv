@@ -1,0 +1,25 @@
+filename,type,D,d_max,V_in,V_ex,V_exc,epsilon,V_cp,H_cp
+compacted_1.npz,Sand mound,-1,-1.926,-1,-1,66892.55552,-1,-1,-1
+compacted_2.npz,Complex crater,222.1977238,-1.112,32923.47584,634.5094569,65212.77208,0.628916527,9931.862143,2.218
+compacted_3.npz,Sand mound,-1,-0.7,-1,-1,129392.0669,-1,-1,-1
+compacted_4.npz,Sand mound,-1,-1.188,-1,-1,115749.9722,-1,-1,-1
+compacted_5.npz,Sand mound,-1,-1.296,-1,-1,124012.7795,-1,-1,-1
+compacted_6.npz,Sand mound,-1,-2.504,-1,-1,117805.0201,-1,-1,-1
+compacted_7.npz,Sand mound,-1,-1.77,-1,-1,105533.3081,-1,-1,-1
+compacted_8.npz,Sand mound,-1,-1.188,-1,-1,128074.3846,-1,-1,-1
+compacted_9.npz,Sand mound,-1,-0.684,-1,-1,160743.4377,-1,-1,-1
+compacted_10.npz,Sand mound,-1,-1.136,-1,-1,150498.9076,-1,-1,-1
+compacted_11.npz,Sand mound,-1,-1.802,-1,-1,129734.0303,-1,-1,-1
+compacted_12.npz,Sand mound,-1,-6.384,-1,-1,148871.8088,-1,-1,-1
+compacted_13.npz,Sand mound,-1,-1.636,-1,-1,164126.7237,-1,-1,-1
+compacted_14.npz,Sand mound,-1,-2.018,-1,-1,125003.5152,-1,-1,-1
+compacted_15.npz,Sand mound,-1,-1.22,-1,-1,135608.7013,-1,-1,-1
+compacted_16.npz,Sand mound,-1,-0.776,-1,-1,150909.6407,-1,-1,-1
+compacted_17.npz,Sand mound,-1,-2.278,-1,-1,190900.1514,-1,-1,-1
+compacted_18.npz,Sand mound,-1,-2.172,-1,-1,165571.4524,-1,-1,-1
+compacted_19.npz,Sand mound,-1,-1.352,-1,-1,178216.7167,-1,-1,-1
+compacted_20.npz,Sand mound,-1,-4.122,-1,-1,131486.2905,-1,-1,-1
+compacted_21.npz,Sand mound,-1,-1.19,-1,-1,200635.9461,-1,-1,-1
+compacted_22.npz,Sand mound,-1,-0.778,-1,-1,176408.5673,-1,-1,-1
+compacted_23.npz,Complex crater,261.804535,-1.23,37040.93861,63.00483814,173590.5342,0.822907995,108916.3427,18.07
+compacted_24.npz,Sand mound,-1,-1.722,-1,-1,117599.465,-1,-1,-1
