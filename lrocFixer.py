@@ -11,12 +11,13 @@ from craterslab.visuals import plot_2D, plot_3D, plot_profile
 from craterslab.ellipse import EllipseVisualConfig
 from craterslab.craters import Surface
 from craterslab.classification import SurfaceType
+from craterslab.profiles import Profile
 
 CORRECT_CLASS = SurfaceType.COMPLEX_CRATER
 
 # Metadata 
 META_DATA = ["filename", "type"]
-ALL_OBSERVABLES = ["D", "d_max", "V_in", "V_ex", "V_exc", "epsilon", "V_cp", "H_cp"] 
+ALL_OBSERVABLES = ["D", "d_max", "V_in", "V_ex", "V_exc", "epsilon", "V_cp", "H_cp", "mean_h_rim"] 
 DEFAULT_OBS_VAL = -1
 
 # Define sensor resolution
@@ -24,14 +25,14 @@ data_resolution = SensorResolution(235.65, 235.65, 1.0, "m")
 
 # Define data sources
 depth_map = DepthMap.from_xyz_file(
-    "lroc_1.xyz", data_folder="data/data_LROC", resolution=data_resolution
+    "lroc_1.xyz", data_folder="data/data_QuickMap", resolution=data_resolution
 )
 # # crop map functions
 # depth_map.auto_crop()
 
-depth_map.crop_borders(ratio=0.25)
+depth_map.crop_borders(ratio=0.35)
 
-# bounding_box = (50, 30, 120, 90)
+# bounding_box = (80, 90, 380, 320)
 # depth_map.crop(bounding_box)
 
 # Create a surface object from the depth map
@@ -44,7 +45,7 @@ s.set_type(surface_type=CORRECT_CLASS)
 p = s.max_profile
 
 # # Create a new profile manually
-# p = Profile(depth_map, start_point=(10, 40), end_point=(40, 10))
+# p = Profile(depth_map, start_point=(23, 18), end_point=(306, 300))
 
 m1, m2 = p.slopes()
 
@@ -63,8 +64,8 @@ plot_3D(
             )
 
 # Produce the plots
-plot_3D(depth_map, profile=s.max_profile, ellipse=s.em, preview_scale=(1, 1, 5))
-plot_2D(depth_map, profile=s.max_profile, ellipse=s.em)
+plot_3D(depth_map, profile=s.max_profile, ellipse=s.em, preview_scale=(1, 1, 4))
+plot_2D(depth_map, profile=s.max_profile, ellipse=s.em) #profile=p manual profile
 plot_profile(p, draw_slopes=True, block=True) 
 
 
