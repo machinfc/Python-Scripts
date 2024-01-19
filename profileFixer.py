@@ -11,7 +11,7 @@ from craterslab.ellipse import EllipticalModel
 from craterslab.visuals import plot_2D, plot_3D, plot_profile
 
 # Define the input filename
-filename = 'data/data_Compacted/compacted_48.npz'
+filename = 'data/data_Fluized/fluized_35.npz'
 
 # Load the depth map and perform auto-cropping
 depth_map = DepthMap.load(filename)
@@ -21,10 +21,10 @@ depth_map.auto_crop()
 em = EllipticalModel(depth_map, 20)
 
 # Create a profile automatically
-# p = em.max_profile()
+p = em.max_profile()
 
 # Create a new profile manually
-p = Profile(depth_map, start_point=(8, 140), end_point=(132, 45))
+# p = Profile(depth_map, start_point=(107, 146), end_point=(5, 60))
 
 # Calculate slopes for the profile
 m1, m2 = p.slopes()

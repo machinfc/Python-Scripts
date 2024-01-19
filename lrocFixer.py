@@ -17,20 +17,20 @@ CORRECT_CLASS = SurfaceType.COMPLEX_CRATER
 
 # Metadata 
 META_DATA = ["filename", "type"]
-ALL_OBSERVABLES = ["D", "d_max", "V_in", "V_ex", "V_exc", "epsilon", "V_cp", "H_cp", "mean_h_rim"] 
+ALL_OBSERVABLES = ["D", "d_max", "d_exc","mean_h_rim", "V_in","V_ex", "V_exc", "V_cp","H_cp","epsilon" ] 
 DEFAULT_OBS_VAL = -1
 
 # Define sensor resolution
-data_resolution = SensorResolution(235.65, 235.65, 1.0, "m")
+data_resolution = SensorResolution(230.5852, 230.5852, 1.0, "m")
 
 # Define data sources
 depth_map = DepthMap.from_xyz_file(
-    "lroc_1.xyz", data_folder="data/data_QuickMap", resolution=data_resolution
+    "depthMap_1.xyz", data_folder="data/data_QuickMap", resolution=data_resolution, z_shift=0
 )
 # # crop map functions
 # depth_map.auto_crop()
 
-depth_map.crop_borders(ratio=0.35)
+depth_map.crop_borders(ratio=0.25)
 
 # bounding_box = (80, 90, 380, 320)
 # depth_map.crop(bounding_box)
@@ -41,10 +41,10 @@ s = Surface(depth_map, ellipse_points=20)
  # Set the corrected surface type
 s.set_type(surface_type=CORRECT_CLASS)
 
-# Create a profile automatically
+# # Create a profile automatically
 p = s.max_profile
 
-# # Create a new profile manually
+# Create a new profile manually
 # p = Profile(depth_map, start_point=(23, 18), end_point=(306, 300))
 
 m1, m2 = p.slopes()
@@ -63,14 +63,14 @@ plot_3D(
         block=False,
             )
 
-# Produce the plots
-plot_3D(depth_map, profile=s.max_profile, ellipse=s.em, preview_scale=(1, 1, 4))
-plot_2D(depth_map, profile=s.max_profile, ellipse=s.em) #profile=p manual profile
+# Produce the plots # profile=p (manual profile) # profile=s.max_profile (automatic profile)
+plot_3D(depth_map, ellipse=s.em, preview_scale=(1, 1, 4))
+plot_2D(depth_map,profile=s.max_profile, ellipse=s.em) #profile=p manual profile
 plot_profile(p, draw_slopes=True, block=True) 
 
 
 # # Print all the observables in Surface computed for the crater
-# print(s)
+print(s)
 
 # Print ALL_OBSERVABLES computed for the crater
 for o in ALL_OBSERVABLES:

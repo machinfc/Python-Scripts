@@ -23,21 +23,21 @@ os.makedirs(output_folder, exist_ok=True)  # Create the output folder if it does
 META_DATA = ["filename", "type"]
 
 # List of all observables to be calculated
-ALL_OBSERVABLES = ["D", "d_max", "V_in", "V_ex", "V_exc", "epsilon", "V_cp", "H_cp", "mean_h_rim"]
+ALL_OBSERVABLES = ["D", "d_max", "d_exc","mean_h_rim", "V_in","V_ex", "V_exc", "V_cp","H_cp","epsilon"]
 
 # Default value for observables if they are not available
 DEFAULT_OBS_VAL = -1
 
 # Define the output file path for observables
-OBSERVABLES_OUTPUT_FILE = os.path.join(output_folder, f'sandMound_obsv.csv')  # Full path to the file
+OBSERVABLES_OUTPUT_FILE = os.path.join(output_folder, f'loosely_obsv.csv')  # Full path to the file
 
 data = []
 
 # Loop through the data files and calculate observables
-for index in range(1, 25):
+for index in range(1, 52 ):
     print(f'Analyzing file {index}')
-    filename = f"compacted_{index}.npz"
-    depth_map = DepthMap.load(f'data/data_Compacted/{filename}')
+    filename = f"fluized_{index}.npz"
+    depth_map = DepthMap.load(f'data/data_Fluized/{filename}')
     depth_map.auto_crop()
     # depth_map.crop_borders(0.3)
     s = Surface(depth_map)

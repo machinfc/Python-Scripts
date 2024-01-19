@@ -25,8 +25,8 @@ os.makedirs(output_folder, exist_ok=True)
 META_DATA = ["filename", "type"]
 
 # List of all observables to be calculated
-ALL_OBSERVABLES = ["D", "d_max", "V_in",
-                   "V_ex", "V_exc", "epsilon", "V_cp", "H_cp"]
+ALL_OBSERVABLES = ["D", "d_max", "d_exc","mean_h_rim", "V_in",
+                   "V_ex", "V_exc", "V_cp","H_cp","epsilon" ]
 
 # Default value for observables if they are not available
 DEFAULT_OBS_VAL = -1
@@ -40,9 +40,9 @@ data = []
 # Loop through the data files and calculate observables
 for index in range(1, 2):
     print(f'Analyzing file {index}')
-    filename = f"lroc_{index}.xyz"
-    data_resolution = SensorResolution(235.65, 235.65, 1.0, "m")
-    depth_map = DepthMap.from_xyz_file(filename, data_folder="data/data_QuickMap", resolution=data_resolution
+    filename = f"depthMap_{index}.xyz"
+    data_resolution = SensorResolution(230.58527, 230.58527, 1.0, "m")
+    depth_map = DepthMap.from_xyz_file(filename, data_folder="data/data_QuickMap", resolution=data_resolution, z_shift=0
                                        )
 
     depth_map.auto_crop()
